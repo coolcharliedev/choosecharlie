@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./../media/favicon.png">
+    <link rel="stylesheet" href="./../index.css">
+    <meta property="og:title" content="Choose Charlie for WTCS President." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://choosecharlie.ca" />
+    <meta property="og:image" content="./media/larger-icon.png" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    
+    <title>Charlie's Endorsements</title>
+</head>
+<body>
+    <section style="width:100%;display:block;" id="charliesignsimage" class="coverimage">
+        
+    </section>
+    <section style="padding:0px;display:flex;flex-flow:row;background-color: rgb(14, 14, 14);" id="why">
+        <div style="padding:40px;" >
+            <div style="display:flex;align-items: center;margin-bottom:10px;" class="expandfrom50to100onmobile">
+                <a href="./../" style="text-decoration: none;display:flex;align-items: center;"><span class="material-symbols-outlined" style="margin-right:10px;">arrow_back</span></a>
+                <a href="./../"><p>Return To Home</p></a>
+            </div>
+            <h2 class="subtitle" style="margin-bottom:10px;">Choose <u>Proven</u></h2>
+            <p style="font-size:30px;">My endorsements aren't just my friends supporting me. These are people who have seen my dedication and hard work, and believe I'm best for the school.</p>
+        </div>
+        <div class="coverimage dissap" style="background-image:url(./../media/cardtilebackground.png);width:100%;" id="cardtilebackground">
+            
+        </div>
+    </section>
+    <section style="padding:20px;display:flex;flex-flow:row;align-items:center;justify-content:center;background-color: rgb(192, 192, 192);">
+        <div class="dynamicsearchbar" style="width:100%;">
+            <span>
+                <span class="material-symbols-outlined">search</span>
+            </span>
+            <input type="text" placeholder="Search For Someone" style="width:100%;">
+        </div>
+    </section>
+    <script src="./../index.js"></script>
+    <script>
+        setupEndorsementsImages()
+
+        addEventListener("resize", (event) => {
+            setupEndorsementsImages()
+        })
+
+        loadEndorsementTiles()
+    </script>
+</body>
+</html> 
