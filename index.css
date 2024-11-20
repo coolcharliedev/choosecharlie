@@ -114,10 +114,19 @@ p{
     max-width: 50%;
 }
 
+.breakonmo{
+    flex-flow:row;
+}
+
+
+
 @media (max-width: 900px){
     .banner{
         flex-flow:column-reverse;
         min-height:100vh;
+    }
+    .breakonmo{
+        flex-flow:column;
     }
     #designatedTextSection{
         position:absolute;
@@ -156,6 +165,7 @@ p{
         display:none;
     }
     .expandfrom50to100onmobile{
-        width:100%;
+        max-width:100%;
     }
+    
 }
