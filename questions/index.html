@@ -15,26 +15,44 @@
 </head>
 <body>
     <section style="padding:0px;display:flex;flex-flow:row;background-color: rgb(14, 14, 14);" id="why">
-        <div style="padding:40px;" class="limitedwidth">
+        <div style="padding:40px 40px 20px 40px;" class="limitedwidth">
             <div style="display:flex;align-items: center;margin-bottom:10px;" >
                 <a href="./../" style="text-decoration: none;display:flex;align-items: center;"><span class="material-symbols-outlined" style="margin-right:10px;">arrow_back</span></a>
                 <a href="./../"><p>Return To Home</p></a>
             </div>
-            <h2 class="subtitle" style="margin-bottom:10px;">Ask A Question</h2>
+            <ht2 class="subtitle" style="margin-bottom:10px;">Ask A Question</ht2>
             <p style="font-size:30px;">I'm always ready to answer questions, clear up confusion, and be as transparent as possible.</p>
             <p style="font-size:30px;margin-top:20px;">Use the search bar below to search your question, and if it hasn't already been answered, click "Ask Question" to have it sent straight to me.</p>
             <p style="font-size:30px;margin-top:20px;">I read all questions that are sent in.</p>
         </div>
     </section>
-    <section style="padding:20px;display:flex;flex-flow:column;align-items:center;justify-content:center;background-color: rgb(192, 192, 192);">
+    <section style="padding:0px;display:flex;flex-flow:row;background-color: rgb(32, 32, 32);" id="why">
+        <div style="padding:20px 40px 0px 40px;" class="limitedwidth">
+            <ht2 class="subtitle" style="margin-bottom:10px;font-size:35px;">Previously answered questions</ht2>
+            <p style="font-size:20px;">If your question isn't here, click the send icon in the input bar to send it in.</p>
+        </div>
+    </section>
+    <section style="padding:20px 40px 20px 40px;display:flex;flex-flow:column;align-items:center;justify-content:center;background-color: rgb(32, 32, 32);">
         <div class="dynamicsearchbar" style="width:100%;">
-            <span>
+            <span style="cursor:default;">
                 <span class="material-symbols-outlined">search</span>
             </span>
-            <input type="text" placeholder="Ask A Question" style="width:100%;">
+            <input type="text" placeholder="Ask A Question" style="width:100%;" id="qinput">
+            <span style="cursor:pointer;" class="sendbutton" onclick="location = `./sendquestion/?question=${encodeURIComponent(document.getElementById('qinput').value)}`">
+                <span class="material-symbols-outlined">send</span>
+            </span>
         </div>
-        <p style="color:black;margin-top:10px;">By submitting information, you agree to the <a href="./tos/" style="color:rgb(55, 0, 255);text-decoration:underline;">Terms of Service</a></p>
+        <!--<p style="color:rgb(255, 255, 255);margin-top:10px;">By submitting information, you agree to the <a href="./tos/" style="color:rgb(55, 0, 255);text-decoration:underline;">Terms of Service</a></p>-->
     </section>
+    <section style="padding:0px;display:flex;flex-flow:row;background-color: rgb(32, 32, 32);" id="why">
+        <div style="padding:20px 40px 40px 40px;" class="limitedwidth">
+            <div style="border:3px white solid;border-radius:10px;padding:20px 30px 20px 30px;">
+                <ht2 class="subtitle" style="margin-bottom:10px;font-size:28px;">Do you think that blah blah blah is blah blah blah?</ht2>
+                <p style="font-size:20px;">Absolutely not. Western Tech is a school that deserves the absolute best.</p>
+            </div>
+        </div>
+    </section>
+    
     <script src="./../index.js"></script>
     <script>
         
