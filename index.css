@@ -283,7 +283,14 @@ textarea{
     padding:10px;
 }
 
+#homemobbar{
+    display:none;
+}
+
 @media (max-width: 900px){
+    #homemobbar{
+        display:flex;
+    }
     .navcontm{
         display:flex;
         flex-flow:row;

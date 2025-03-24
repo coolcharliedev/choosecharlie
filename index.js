@@ -232,3 +232,15 @@ async function buildNavBar(currentpage){
         i++
     }
 }
+
+addEventListener("resize", e =>{
+    console.log('as')
+    document.getElementById('spacer').style.display = 'block'
+    document.getElementById('spacer').style.height = document.getElementsByClassName('classnavcont')[0].offsetHeight+"px"
+})
+
+addEventListener("load", e =>{
+    console.log('as')
+    document.getElementById('spacer').style.display = 'block'
+    document.getElementById('spacer').style.height = document.getElementsByClassName('classnavcont')[0].offsetHeight+"px"
+})
