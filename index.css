@@ -10,6 +10,11 @@
     display:flex;
     flex-flow:row;
 }
+
+.col{
+    display:flex;
+    flex-flow:column;
+}
 *{
     padding:0px;
     margin:0px;
@@ -89,6 +94,10 @@ a{
 }
 p{
     font-family:Helvetica, sans-serif
+}
+
+.display{
+    font-family:helveticaneue, Helvetica, sans-serif;
 }
 
 .subtitle{
@@ -252,6 +261,26 @@ p{
 .hamburgmobile{
     display:none;
     cursor:pointer;
+}
+
+input.b{
+    background-color: transparent;
+    border:2px white solid;
+    border-radius:5px;
+    color:white;
+    font-size:20px;
+    padding:10px;
+}
+
+textarea{
+    background-color: transparent;
+    border:2px white solid;
+    border-radius:5px;
+    color:white;
+    font-size:20px;
+    resize: vertical;
+    font-family:helvetica;
+    padding:10px;
 }
 
 @media (max-width: 900px){

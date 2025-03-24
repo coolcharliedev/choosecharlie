@@ -1,0 +1,50 @@
+[
+    {
+      "name": "Rory Laing-Gatehouse",
+      "positions": [
+        {
+          "name": "SAC Vice President",
+          "time": "2023-2024"
+        },
+        {
+          "name": "SAC Co-President",
+          "time": "2024-2025"
+        }
+      ],
+      "grade": "11"
+    },
+    {
+      "name": "Cole Macleod",
+      "positions": [
+        {
+          "name": "SAC President",
+          "time": "2023-2024"
+        },
+        {
+          "name": "SAC Grade 12 Rep",
+          "time": "2024-2025"
+        }
+      ],
+      "grade": "12"
+    },
+    {
+      "name": "Zackary Prior",
+      "positions": [
+        {
+          "name": "SAC Co-President",
+          "time": "2024-2025"
+        }
+      ],
+      "grade": "11"
+    },
+    {
+      "name": "Jaden Segal-Braves",
+      "positions": [
+        {
+          "name": "SAC Chair",
+          "time": "2023-2024"
+        }
+      ],
+      "grade": "11"
+    }
+  ]

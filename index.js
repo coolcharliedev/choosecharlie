@@ -31,62 +31,15 @@ async function animateUnderlineDecoration(){
     },10)
 }
 
-const endorsements = [
-    {
-        name: "Rory Laing-Gatehouse",
-        positions:[
-            {
-                name:"SAC Vice President",
-                time:"2023-2024"
-            },
-            {
-                name:"SAC Co-President",
-                time:"2024-2025"
-            },
-        ],
-        grade:"11",
-    },
-    {
-        name: "Cole Macleod",
-        positions:[
-            {
-                name:"SAC President",
-                time:"2023-2024"
-            },
-            {
-                name:"SAC Grade 12 Rep",
-                time:"2024-2025"
-            },
-        ],
-        grade:"12",
-    },
-    {
-        name: "Zackary Prior",
-        positions:[
-            {
-                name:"SAC Co-President",
-                time:"2024-2025"
-            },
-        ],
-        grade:"11",
-    },
-    {
-        name: "Jaden Segal-Braves",
-        positions:[
-            {
-                name:"SAC Chair",
-                time:"2023-2024"
-            },
-        ],
-        grade:"11",
-    }
-]
+async function getEndorsements(){
+    return await (await fetch("./../endorsements.json")).json()
+}
 
 async function loadEndorsementTiles(range){
     if(range){
         buildEndorsementTiles(range)
     }else{
-        buildEndorsementTiles(endorsements)
+        buildEndorsementTiles(await getEndorsements())
     }
 }
 
@@ -108,7 +61,76 @@ async function sortAdjusted(query){
     buildEndorsementTiles(range)
 }
 
+async function populateQuestionField(){
+    var url_string = window.location.href
+    var url = new URL(url_string);
+    var c = url.searchParams.get("question");
+
+
+    document.getElementById('question').value = c
+}
+
+async function submitQuestion(){
+    info = {
+        question:document.getElementById('question').value,
+        first:document.getElementById('fn').value,
+        last:document.getElementById('ln').value,
+        email:document.getElementById('email').value
+    }
+    if(!info.question){
+        return document.getElementById('errorMsg').innerHTML = "Question cannot be blank."
+    }
+
+    if((info.first && !info.last) || (!info.first && info.last)){
+        return document.getElementById('errorMsg').innerHTML = "If you submit one part of the name you must submit the whole thing."
+    }
+
+    if(!hcaptcha.getResponse()){
+        return document.getElementById('errorMsg').innerHTML = "Complete the captcha to continue."
+    }
+
+    if(!info.first && !info.last){
+        namea = "Anonymous"
+    }else{
+        namea = info.first+" "+info.last.substring(0,1)
+    }
+
+    final = {
+        question:info.question,
+        name:namea,
+        email:info.email,
+    }
+
+    l = window.localStorage.getItem("qSubmitted")
+    if(parseInt(l)){
+        if(((new Date()).getTime()) - parseInt(l) < 1000*60*5){
+            document.getElementById('errorMsg').innerHTML = "Please wait longer before asking another question."
+            return
+        }
+    }
+
+    document.getElementById('errorMsg').innerHTML = "<span style='color:yellow;'>Sending request to server...</span>"
+
+    res = await sendQuestion(final)
+
+    if(res == 200){
+        document.getElementById('questionform').remove()
+        document.getElementById('successNotification').style.display = "block"
+
+        window.localStorage.setItem('qSubmitted', (new Date()).getTime())
+    }else{
+        document.getElementById('errorMsg').innerHTML = "An unexpected error occurred while submitting your question. Contact Charlie for more details."
+    }
+}
+    
+async function sendQuestion(a){
+    console.log(a)
+
+    return 200
+}
+
 async function buildEndorsementTiles(build){
+    endorsements = await getEndorsements()
     document.getElementById('endorsementTiles').innerHTML = ""
     function compare( a, b ) {
         if ( a.name < b.name ){
