@@ -6,6 +6,10 @@
         url('helveticaneue.woff') format('woff');
 }
 
+.row{
+    display:flex;
+    flex-flow:row;
+}
 *{
     padding:0px;
     margin:0px;
@@ -154,9 +158,111 @@ p{
     transform:scale(1.1);
 }
 
+#endorsementTiles{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+#endorsementTiles >.end{
+    min-width:300px;
+    width:100%;
+    height:500px;
+    border:4px white solid;
+    display:flex;
+    flex-flow:column;
+    justify-content: end;
+    
+
+}
+
+#endorsementTiles > .end > .endtxb{
+    margin:10px;
+    padding:20px;
+    border-radius:10px;
+    background-color:white;
+    display:flex;
+    flex-flow:column;
+    box-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.3),
+             0px 18px 23px rgba(0,0,0,0.3);
+}
+
+#endorsementTiles > .end > .endtxb > .ename{
+    color:black;
+    font-family:helveticaneue, Helvetica, sans-serif;
+    font-size:20px;
+}
+#endorsementTiles > .end > .endtxb > .epos{
+    color:rgb(24, 24, 24);
+    font-family:helveticaneue, Helvetica, sans-serif;
+    font-size:13px;
+}
+
+.navbarelement{
+    display:flex;
+    flex-flow:row;
+    gap:20px;
+}
+
+.navBarOption{
+    color:gray;
+    font-family:helveticaneue, Helvetica, sans-serif;
+    text-transform: capitalize;
+    transition:0.3s;
+    font-size:30px;
+    letter-spacing: -0.05cap;
+}
+
+.navBarOption:hover{
+    color:white;
+    cursor:pointer;
+}
+
+.actuallyabutton{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor:pointer;
+    transition:0.2s;
+    width: max-content;
+}
+
+.actuallyabutton:hover{
+    opacity:0.5;
+}
+
+.classnavcont{
+    display:flex;
+    flex-flow:row;
+    align-items: center;
+    justify-content: space-between;
+    padding:20px 20px;
+}
+
+.navcontm{
+    display:flex;
+    flex-flow:row;
+    justify-content: start;
+    width:100%;
+}
+
+.hamburgmobile{
+    display:none;
+    cursor:pointer;
+}
 
 @media (max-width: 900px){
-   
+    .navcontm{
+        display:flex;
+        flex-flow:row;
+        justify-content: space-between;
+    }
+    .classnavcont{
+        flex-flow:column;
+    }
     .banner{
         min-height:unset;
         flex-flow:column;
@@ -167,6 +273,23 @@ p{
     .breakonmo{
         flex-flow:column;
     }
+    .navbarelement{
+        flex-flow:column;
+        display:flex;
+        
+        height:0px;
+        overflow:hidden;
+        transition:0.5s;
+    }
+    .navbarelement.expanded{
+        display:flex;
+        padding-top:20px;
+        
+        height:max-content;
+    }
+    .hamburgmobile{
+        display:block;
+    }
     .bannerimage{
         box-sizing: border-box;
         
@@ -176,10 +299,10 @@ p{
         width:100%;
         padding:70px 40px 40px 40px;
     }
-    h1{
+    ht1{
         font-size:50px;
     }
-    h2{
+    ht2{
         font-size:20px;
     }
     .limitedwidth{
@@ -216,5 +339,12 @@ p{
         margin:0px;
         padding-bottom:0px;
         margin-top:80px;
+    }
+    #endorsementTiles{
+        display: grid;
+        grid-template-columns: auto ;
+    }
+    #homebigbar{
+        display:none;
     }
 }

@@ -14,16 +14,18 @@
     <title>Ask A Question</title>
 </head>
 <body>
-    <section style="padding:0px;display:flex;flex-flow:row;background-color: rgb(14, 14, 14);" id="why">
+    <section style="background-color:rgb(14,14,14);border-bottom:4px white solid;" class="classnavcont">
+        <ht2 class="actuallyabutton">choosecharlie</ht2>
+        <div class="navbarelement"></div>
+    </section>
+    <section style="padding:0px;width:100%;display:flex;justify-content:space-between;flex-flow:row;background-color: rgb(14, 14, 14);" id="why">
         <div style="padding:40px 40px 20px 40px;" class="limitedwidth">
-            <div style="display:flex;align-items: center;margin-bottom:10px;" >
-                <a href="./../" style="text-decoration: none;display:flex;align-items: center;"><span class="material-symbols-outlined" style="margin-right:10px;">arrow_back</span></a>
-                <a href="./../"><p>Return To Home</p></a>
-            </div>
             <ht2 class="subtitle" style="margin-bottom:10px;">Ask A Question</ht2>
             <p style="font-size:30px;">I'm always ready to answer questions, clear up confusion, and be as transparent as possible.</p>
-            <p style="font-size:30px;margin-top:20px;">Use the search bar below to search your question, and if it hasn't already been answered, click "Ask Question" to have it sent straight to me.</p>
             <p style="font-size:30px;margin-top:20px;">I read all questions that are sent in.</p>
+        </div>
+        <div class=" coverimage" style="background-image:url('./../media/questionmrkpicscaleddown.png');width:500px;">
+
         </div>
     </section>
     <section style="padding:0px;display:flex;flex-flow:row;background-color: rgb(32, 32, 32);" id="why">
@@ -47,15 +49,16 @@
     <section style="padding:0px;display:flex;flex-flow:row;background-color: rgb(32, 32, 32);" id="why">
         <div style="padding:20px 40px 40px 40px;" class="limitedwidth">
             <div style="border:3px white solid;border-radius:10px;padding:20px 30px 20px 30px;">
-                <ht2 class="subtitle" style="margin-bottom:10px;font-size:28px;">Do you think that blah blah blah is blah blah blah?</ht2>
-                <p style="font-size:20px;">Absolutely not. Western Tech is a school that deserves the absolute best.</p>
+                <ht2 class="subtitle" style="font-size:28px;">Example Question?</ht2>
+                <p style="margin-bottom:10px;">Asked by <span style="color:rgb(0, 89, 255);">Rory L</span></p>
+                <p style="font-size:20px;">Absolutely not. Example answer.</p>
             </div>
         </div>
     </section>
     
     <script src="./../index.js"></script>
     <script>
-        
+        buildNavBar("questions")
     </script>
 </body>
 </html> 
