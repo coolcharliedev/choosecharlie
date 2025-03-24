@@ -1,6 +1,7 @@
 [
     {
       "name": "Rory Laing-Gatehouse",
+      "img":"rlaing-gatehouse",
       "positions": [
         {
           "name": "SAC Vice President",
@@ -28,21 +29,24 @@
       "grade": "12"
     },
     {
-      "name": "Zackary Prior",
+      "name": "Jahmar Shakes",
+      "img":"jshakes",
       "positions": [
         {
-          "name": "SAC Co-President",
-          "time": "2024-2025"
+          "name": "Colts Sr. Football Running Back"
         }
       ],
       "grade": "11"
     },
     {
-      "name": "Jaden Segal-Braves",
+      "name": "Kaylie Welch",
+      "img":"kwelch",
       "positions": [
         {
-          "name": "SAC Chair",
-          "time": "2023-2024"
+          "name": "AV Crew Member"
+        },
+        {
+          "name": "Badminton Team Member"
         }
       ],
       "grade": "11"
