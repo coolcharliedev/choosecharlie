@@ -2,6 +2,7 @@
     {
       "name": "Rory Laing-Gatehouse",
       "img":"rlaing-gatehouse",
+      "lvl":1,
       "positions": [
         {
           "name": "SAC Vice President",
@@ -16,6 +17,7 @@
     },
     {
       "name": "Cole Macleod",
+      "lvl":1,
       "positions": [
         {
           "name": "SAC President",
@@ -31,6 +33,7 @@
     {
       "name": "Jahmar Shakes",
       "img":"jshakes",
+      "lvl":2,
       "positions": [
         {
           "name": "Colts Sr. Football Running Back"
@@ -41,6 +44,7 @@
     {
       "name": "Kaylie Welch",
       "img":"kwelch",
+      "lvl":3,
       "positions": [
         {
           "name": "AV Crew Member"

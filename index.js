@@ -48,6 +48,8 @@ async function sortAdjusted(query){
         return buildEndorsementTiles(endorsements)
     }
 
+    endorsements = await getEndorsements()
+
     range = []
 
     i = 0
@@ -129,9 +131,7 @@ async function sendQuestion(a){
     return 200
 }
 
-async function buildEndorsementTiles(build){
-    endorsements = await getEndorsements()
-    document.getElementById('endorsementTiles').innerHTML = ""
+async function addEndorsementTiles(build){
     function compare( a, b ) {
         if ( a.name < b.name ){
           return -1;
@@ -180,8 +180,29 @@ async function buildEndorsementTiles(build){
         document.getElementById('endorsementTiles').appendChild(element)
         i++
     }
+}
 
-   
+async function buildEndorsementTiles(buildr){
+    console.log(buildr)
+    document.getElementById('endorsementTiles').innerHTML = ""
+    priorities = {}
+
+    i = 0
+    while(i<buildr.length){
+        if(priorities[buildr[i].lvl]){
+            priorities[buildr[i].lvl].push(buildr[i])
+        }else{
+            priorities[buildr[i].lvl] = []
+            priorities[buildr[i].lvl].push(buildr[i])
+        }
+        i++
+    }
+    v=1
+    while(v<6){
+        await addEndorsementTiles(priorities[v] || [])
+        v++
+    }
+    console.log(priorities)
 }
 
 const pages = [
