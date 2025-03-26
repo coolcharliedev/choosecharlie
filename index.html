@@ -16,7 +16,7 @@
 <body>
     <section style="background-color:rgb(14,14,14);position:fixed;top:0;right:0;width:100%;z-index:1000;" class="classnavcont" id="homemobbar">
         <div class="navcontm">
-            <a  href="./../../"><ht2 class="actuallyabutton"></ht2></a>
+            <a  id="cchomebutton" ><ht2 class="actuallyabutton"></ht2></a>
             <span class="material-symbols-outlined hamburgmobile" style="margin-right:10px;" onclick="toggleNavContVisibility(this)">menu</span>
         </div>
         <div class="navbarelement "></div>
@@ -94,7 +94,7 @@
     </section>
     <script src="./index.js"></script>
     <script>
-        animateUnderlineDecoration()
+        r=0
 
         /*addEventListener("resize", (event) => {
             animateUnderlineDecoration()
@@ -108,6 +108,13 @@
         setupEndorsementCount()
 
         buildNavBar("home")
+
+        addEventListener("keydown", e=>{
+            if(e.key == "u") animateUnderlineDecoration()
+        })
+    </script>
+    <script defer>
+        animateUnderlineDecoration()
     </script>
 </body>
 </html>

@@ -16,6 +16,39 @@
       "grade": "11"
     },
     {
+      "name": "Fraser Dempsey",
+      "img":"fdempsey",
+      "lvl":2,
+      "positions": [
+        {
+          "name": "Colts Sr. Volleyball Starting Setter"
+        }
+      ],
+      "grade": "11"
+    },
+    {
+      "name": "Avery Kwong",
+      "img":"akwong",
+      "lvl":4,
+      "positions": [
+        {
+          "name": "Robotics SHSM Student"
+        }
+      ],
+      "grade": "11"
+    },
+    {
+      "name": "Maxsym Romanyshyn",
+      "img":"mromanyshyn",
+      "lvl":3,
+      "positions": [
+        {
+          "name": "Colts Sr. Volleyball"
+        }
+      ],
+      "grade": "11"
+    },
+    {
       "name": "Cole Macleod",
       "lvl":1,
       "positions": [

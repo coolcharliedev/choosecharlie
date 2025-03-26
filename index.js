@@ -32,7 +32,7 @@ async function animateUnderlineDecoration(){
 }
 
 async function getEndorsements(){
-    return await (await fetch("./../endorsements.json")).json()
+    return await (await fetch(`./${await getRelativeIndentation()}endorsements.json`)).json()
 }
 
 async function loadEndorsementTiles(range){
@@ -131,6 +131,17 @@ async function sendQuestion(a){
     return 200
 }
 
+async function getRelativeIndentation(){
+    h = 0
+    p = ""
+    while(h<r){
+        p+="../"
+        h++
+    }
+
+    return p
+}
+
 async function addEndorsementTiles(build){
     function compare( a, b ) {
         if ( a.name < b.name ){
@@ -150,9 +161,9 @@ async function addEndorsementTiles(build){
         element.classList.add("coverimage")
         element.classList.add("end")
         if(build[i]["img"]){
-            element.style.backgroundImage = `url('./../media/endorsementimages/${build[i].img}.png')`
+            element.style.backgroundImage = `url('./${await getRelativeIndentation()}media/endorsementimages/${build[i].img}.png')`
         }else{
-            element.style.backgroundImage = `url('./../media/cardtilebackground.png')`
+            element.style.backgroundImage = `url('./${await getRelativeIndentation()}media/cardtilebackground.png')`
         }
         textbox = document.createElement("div")
         textbox.classList.add('endtxb')
@@ -236,13 +247,19 @@ async function buildNavBar(currentpage){
     i = 0
     nv = document.getElementsByClassName("navbarelement")
 
+    try{
+        document.getElementById('cchomebutton').setAttribute('href', `./${await getRelativeIndentation()}`)
+    }catch(err){
+        console.error("CCH Navhomequickicon Exception: page has an invalid id")
+    }
+
     while(i<nv.length){
         j = 0
         while(j<pages.length){
             bn = document.createElement('span')
             bn.innerHTML = pages[j].n
             bn.classList.add('navBarOption')
-            bn.setAttribute("onclick", `location = "./../${pages[j].l}"`)
+            bn.setAttribute("onclick", `location = "./${await getRelativeIndentation()}${pages[j].l}"`)
             nv[i].appendChild(bn)
 
             if(pages[j].n.toLowerCase() == currentpage.toLowerCase()){
@@ -255,13 +272,21 @@ async function buildNavBar(currentpage){
 }
 
 addEventListener("resize", e =>{
-    console.log('as')
-    document.getElementById('spacer').style.display = 'block'
-    document.getElementById('spacer').style.height = document.getElementsByClassName('classnavcont')[0].offsetHeight+"px"
+    try{
+        document.getElementById('spacer').style.display = 'block'
+        document.getElementById('spacer').style.height = document.getElementsByClassName('classnavcont')[0].offsetHeight+"px"
+    }catch(err){
+        console.error("CCH Exception: page has an invalid head spacer")
+    }
+    
 })
 
 addEventListener("load", e =>{
-    console.log('as')
-    document.getElementById('spacer').style.display = 'block'
-    document.getElementById('spacer').style.height = document.getElementsByClassName('classnavcont')[0].offsetHeight+"px"
+    try{
+        document.getElementById('spacer').style.display = 'block'
+        document.getElementById('spacer').style.height = document.getElementsByClassName('classnavcont')[0].offsetHeight+"px"
+    }catch(err){
+        console.error("CCH Exception: page has an invalid head spacer")
+    }
+    
 })
