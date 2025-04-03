@@ -43,7 +43,7 @@
             <span style="cursor:default;">
                 <span class="material-symbols-outlined">search</span>
             </span>
-            <input type="text" placeholder="Ask A Question" style="width:100%;" id="qinput">
+            <input type="text" placeholder="Ask A Question" style="width:100%;" id="qinput" oninput="loadQuestions(this.value)">
             <span style="cursor:pointer;" class="sendbutton" onclick="location = `./sendquestion/?question=${encodeURIComponent(document.getElementById('qinput').value)}`">
                 <span class="material-symbols-outlined">send</span>
             </span>
@@ -51,12 +51,8 @@
         <!--<p style="color:rgb(255, 255, 255);margin-top:10px;">By submitting information, you agree to the <a href="./tos/" style="color:rgb(55, 0, 255);text-decoration:underline;">Terms of Service</a></p>-->
     </section>
     <section style="padding:0px;display:flex;flex-flow:row;background-color: rgb(32, 32, 32);" id="why">
-        <div style="padding:20px 40px 40px 40px;" class="limitedwidth">
-            <div style="border:3px white solid;border-radius:10px;padding:20px 30px 20px 30px;">
-                <ht2 class="subtitle" style="font-size:28px;">Example Question?</ht2>
-                <p style="margin-bottom:10px;">Asked by <span style="color:rgb(0, 89, 255);">Rory L</span></p>
-                <p style="font-size:20px;">Absolutely not. Example answer.</p>
-            </div>
+        <div class="col" id="questionZone" style="padding:0px 40px 40px 40px;gap:15px;">
+
         </div>
     </section>
     
@@ -64,6 +60,7 @@
     <script>
         r=1
         buildNavBar("questions")
+        initialQuestionLoad()
     </script>
 </body>
 </html> 

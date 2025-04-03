@@ -290,3 +290,102 @@ addEventListener("load", e =>{
     }
     
 })
+
+async function getOffsiteQuestions(){
+
+    console.log('gosq')
+    return [
+        {
+            q:{
+                author:"Rory L",
+                time:(new Date()).getTime()-(1000*60*60*48),
+                content: "Test Question 1"
+            },
+            a:{
+                author:"Charlie L",
+                time:(new Date()).getTime(),
+                content: "Test Answer 1"
+            }
+        },
+        {
+            q:{
+                author:"Aaron Z",
+                time:(new Date()).getTime()-(1000*60*60*48),
+                content: "Test Question 2"
+            },
+            a:{
+                author:"Charlie L",
+                time:(new Date()).getTime(),
+                content: "Test Answer 2"
+            }
+        },
+    ]
+}
+
+async function getQuestions(loadOffsite){
+    if(loadOffsite){
+        qs = await getOffsiteQuestions()
+
+        window.localStorage.setItem('questionCache', JSON.stringify(qs))
+
+        return qs
+    }else{
+        qs = window.localStorage.getItem('questionCache')
+
+        qs = JSON.parse(qs)
+
+        return qs
+    }
+}
+
+async function initialQuestionLoad(){
+    await getQuestions(true)
+
+    await loadQuestions()
+}
+
+async function buildQuestions(whichonestho){
+    t = document.getElementById('questionZone')
+    t.innerHTML = ""
+    i = 0
+    while(i<whichonestho.length){
+        main = document.createElement('div')
+        t.appendChild(main)
+
+        main.innerHTML = `<div style="border:3px white solid;border-radius:10px;padding:20px 30px 20px 30px;">
+                <ht2 class="subtitle" style="font-size:28px;">${whichonestho[i].q.content}</ht2>
+                <p style="margin-bottom:10px;">Asked by <span style="color:rgb(0, 89, 255);">${whichonestho[i].q.author}</span></p>
+                <p style="font-size:20px;">${whichonestho[i].a.content}</p>
+            </div>`
+        i++
+    }
+}
+
+
+async function loadQuestions(query){
+    questions = await getQuestions()
+    if(!query){
+        buildQuestions(questions)
+    }else{
+        i = 0
+        range = []
+
+        while(i<questions.length){
+            add = false
+            if(questions[i].q.content.toLowerCase().includes(query.toLowerCase())){
+                add = true
+            }
+
+            if(questions[i].a.content.toLowerCase().includes(query.toLowerCase())){
+                add = true
+            }
+
+            if(add){
+                range.push(questions[i])
+            }
+            i++
+        }
+
+        buildQuestions(range)
+    }
+}

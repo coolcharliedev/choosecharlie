@@ -38,6 +38,16 @@
       "grade": "11"
     },
     {
+      "name": "Mia Clark",
+      "lvl":4,
+      "positions": [
+        {
+          "name": "Design SHSM Student"
+        }
+      ],
+      "grade": "11"
+    },
+    {
       "name": "Maxsym Romanyshyn",
       "img":"mromanyshyn",
       "lvl":3,
