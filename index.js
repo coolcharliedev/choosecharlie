@@ -292,9 +292,9 @@ addEventListener("load", e =>{
 })
 
 async function getOffsiteQuestions(){
+    
 
-    console.log('gosq')
-    return [
+    /*return [
         {
             q:{
                 author:"Rory L",
@@ -319,7 +319,7 @@ async function getOffsiteQuestions(){
                 content: "Test Answer 2"
             }
         },
-    ]
+    ]*/
 }
 
 async function getQuestions(loadOffsite){
