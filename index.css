@@ -46,6 +46,13 @@ ht2{
     width:100%;
     letter-spacing: -0.05cap;
 }
+ht3{
+    font-family: helveticaneue, Helvetica, sans-serif;
+    font-size:30px;
+    display:block;
+    width:100%;
+    letter-spacing: -0.05cap;
+}
 
 .banner{
     height:100vh;

@@ -31,7 +31,10 @@ async function animateUnderlineDecoration(){
     },10)
 }
 
+cancelend = true
+
 async function getEndorsements(){
+    if(cancelend) return [{name:"Sorry,",lvl:1,positions:[{name:"The endorsements page is currently under maintenance"}]}]
     return await (await fetch(`./${await getRelativeIndentation()}endorsements.json`)).json()
 }
 
@@ -132,14 +135,16 @@ async function sendQuestion(a){
 }
 
 async function getRelativeIndentation(){
-    h = 0
-    p = ""
-    while(h<r){
-        p+="../"
-        h++
+    r=r
+    console.log(r)
+    ha = 0
+    prd = ""
+    while(ha<r){
+        prd+="../"
+        ha++
     }
 
-    return p
+    return prd
 }
 
 async function addEndorsementTiles(build){
@@ -244,7 +249,7 @@ async function toggleNavContVisibility(e){
 }
 
 async function buildNavBar(currentpage){
-    i = 0
+    it = 0
     nv = document.getElementsByClassName("navbarelement")
 
     try{
@@ -253,21 +258,22 @@ async function buildNavBar(currentpage){
         console.error("CCH Navhomequickicon Exception: page has an invalid id")
     }
 
-    while(i<nv.length){
-        j = 0
-        while(j<pages.length){
+    while(it<nv.length){
+        jb = 0
+        while(jb<pages.length){
+            console.log("g"+jb)
             bn = document.createElement('span')
-            bn.innerHTML = pages[j].n
+            bn.innerHTML = pages[jb].n
             bn.classList.add('navBarOption')
-            bn.setAttribute("onclick", `location = "./${await getRelativeIndentation()}${pages[j].l}"`)
-            nv[i].appendChild(bn)
+            bn.setAttribute("onclick", `location = "./${await getRelativeIndentation()}${pages[jb].l}"`)
+            nv[it].appendChild(bn)
 
-            if(pages[j].n.toLowerCase() == currentpage.toLowerCase()){
+            if(pages[jb].n.toLowerCase() == currentpage.toLowerCase()){
                 bn.style.color = "white"
             }
-            j++
+            jb++
         }
-        i++
+        it++
     }
 }
 
@@ -291,7 +297,48 @@ addEventListener("load", e =>{
     
 })
 
+async function sheetsToStreets(thing){
+    rows = thing["rows"]
+    qs = []
+
+    ie= 0
+    while(ie<rows.length){
+        qs.push({
+            q:{
+                author: rows[ie]["c"][4].v,
+                time:rows[ie]["c"][3].v,
+                content: rows[ie]["c"][2].v
+            },
+            a:{
+                content:rows[ie]["c"][6].v
+            }
+        })
+        ie++
+    }
+
+    window.localStorage.setItem("questionCache",JSON.stringify(qs))
+
+    await loadQuestions()
+}
+
 async function getOffsiteQuestions(){
+    function reqListener () {
+        var jsonString = this.responseText.match(/(?<="table":).*(?=}\);)/g)[0];
+        var json = JSON.parse(jsonString);
+        
+        sheetsToStreets(json)
+      }
+      
+      var id = '1tCigEjy5WbyMG0lQI6VgT0VNGZvjkBxyWNCSTPrz_xA';
+      var gid = '1601666407';
+      var url = 'https://docs.google.com/spreadsheets/d/'+id+'/gviz/tq?tqx=out:json&tq&gid='+gid;
+      var oReq = new XMLHttpRequest();
+      oReq.onload = reqListener;
+      oReq.open("get", url, true);
+      oReq.send();
+
+      
+
     
 
     /*return [
@@ -320,6 +367,7 @@ async function getOffsiteQuestions(){
             }
         },
     ]*/
+   return []
 }
 
 async function getQuestions(loadOffsite){

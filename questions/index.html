@@ -44,7 +44,7 @@
                 <span class="material-symbols-outlined">search</span>
             </span>
             <input type="text" placeholder="Ask A Question" style="width:100%;" id="qinput" oninput="loadQuestions(this.value)">
-            <span style="cursor:pointer;" class="sendbutton" onclick="location = `./sendquestion/?question=${encodeURIComponent(document.getElementById('qinput').value)}`">
+            <span style="cursor:pointer;" class="sendbutton" onclick="location = `https:\/\/docs.google.com/forms/d/e/1FAIpQLScyBWCxpj9QfvBVhTT6PBv_KaUqPksEUlf3lOjvQLnvH8XVag/viewform?usp=pp_url&entry.2017249375=${encodeURIComponent(document.getElementById('qinput').value)}`">
                 <span class="material-symbols-outlined">send</span>
             </span>
         </div>
@@ -56,11 +56,12 @@
         </div>
     </section>
     
+    <script src="https://unpkg.com/tabletop@1.6.3/src/tabletop.js"></script>
     <script src="./../index.js"></script>
     <script>
         r=1
         buildNavBar("questions")
-        initialQuestionLoad()
+        window.addEventListener('DOMContentLoaded', initialQuestionLoad);
     </script>
 </body>
 </html> 
