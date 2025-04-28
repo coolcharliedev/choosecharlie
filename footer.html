@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @font-face {
+                font-family: 'helveticaneue';
+                src:url('./helveticaneue.woff2') format('woff2'),
+                    url('./helveticaneue.woff') format('woff');
+            }
+        body{
+            background: radial-gradient(farthest-corner at 100% 100%, rgba(130,130,130,1) 0%, rgba(79,79,79,1) 20%, rgba(41,41,41,1) 30%, rgba(13,13,13,1) 50%);
+            padding:40px;
+        }
+
+        span.h1{
+            font-family: helveticaneue, Arial,helvetica;
+            color: white;
+            font-size:20px;
+        }
+        span.h2{
+            font-family: Arial,helvetica;
+            color: white;
+            font-size:18px;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover{
+            
+            text-decoration: underline;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <!--<span class="h1">Choose Charlie</span>-->
+    <div style="display:flex;flex-flow:row;gap:40px;">
+        <div style="display:inline-flex;flex-flow:column;gap:10px;align-items: start;" class="itemlist">
+            <span class="h2"><b>Pages</b></span>
+            <a href="./" target="_parent"><span class="h2">Home</span></a>
+            <a href="./endorsements" target="_parent"><span class="h2">Endorsements</span></a>
+            <a href="./questions" target="_parent"><span class="h2">Questions</span></a>
+            <a href="./promises" target="_parent"><span class="h2">Promises</span></a>
+        </div>
+        <div style="display:inline-flex;flex-flow:column;gap:10px;align-items: start;" class="itemlist">
+            <span class="h2"><b>Contact</b></span>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScyBWCxpj9QfvBVhTT6PBv_KaUqPksEUlf3lOjvQLnvH8XVag/viewform" target="_parent"><span class="h2">Send Question</span></a>
+            <a href="javascript:alert('Email charles.lam2@student.tdsb.on.ca')"><span class="h2">Direct Contact</span></a>
+        </div>
+    </div>
+    <div style="border-top:1px white solid;margin-top:20px;padding-top:20px;display:flex;flex-flow:row;justify-content: end;align-items: center;">
+        <span class="h1">choosecharlie.ca</span>
+    </div>
+</body>
+</html>

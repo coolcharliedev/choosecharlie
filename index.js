@@ -402,8 +402,9 @@ async function buildQuestions(whichonestho){
 
         main.innerHTML = `<div style="border:3px white solid;border-radius:10px;padding:20px 30px 20px 30px;">
                 <ht2 class="subtitle" style="font-size:28px;">${whichonestho[i].q.content}</ht2>
-                <p style="margin-bottom:10px;">Asked by <span style="color:rgb(0, 89, 255);">${whichonestho[i].q.author}</span></p>
-                <p style="font-size:20px;">${whichonestho[i].a.content}</p>
+                <p style="margin-bottom:10px;">Asked by <span style="color:rgb(0, 89, 255);">${whichonestho[i].q.author}</span> on <span style="color:rgb(0, 89, 255);">${(new Date(whichonestho[i].q.time)).toDateString()}</p>
+                <p style="font-size:20px;display:none;">${whichonestho[i].a.content}</p>
+                <p style="font-size:20px;text-decoration:underline;cursor:pointer;" onclick="this.parentElement.children[2].style.display='block';this.remove()">Click here to read answer</p>
             </div>`
         i++
     }
