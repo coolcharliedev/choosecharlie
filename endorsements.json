@@ -98,5 +98,65 @@
         }
       ],
       "grade": "11"
+    },
+    {
+      "name": "Javaine F",
+      "img":"javaine",
+      "lvl":5,
+      "positions": [],
+      "grade": "11"
+    },
+    {
+      "name": "Sparrow Lee Byrne",
+      "img":"sleebyrne",
+      "lvl":4,
+      "positions": [
+        {
+          "name":"Robotics SHSM Student"
+        }
+      ],
+      "grade": "11"
+    },
+    {
+      "name": "Ms. S Dharsi",
+      "img":"dharsi",
+      "lvl":1,
+      "positions": [
+        {
+          "name":"Mathematics Department"
+        }
+      ],
+      "grade": "t"
+    },
+    {
+      "name": "Charlotte Smith",
+      "img":"csmith",
+      "lvl":3,
+      "positions": [
+        {
+          "name":"Robotics Team"
+        }
+      ],
+      "grade": "t"
+    },
+    {
+      "name": "Porsche Ukeni",
+      "lvl":4,
+      "positions": [
+        {
+          "name":"Culinary Arts SHSM"
+        }
+      ],
+      "grade": "t"
+    },
+    {
+      "name": "Mr. J Wang",
+      "lvl":1,
+      "positions": [
+        {
+          "name":"ACL, Robotics"
+        }
+      ],
+      "grade": "t"
     }
   ]

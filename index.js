@@ -31,7 +31,7 @@ async function animateUnderlineDecoration(){
     },10)
 }
 
-cancelend = true
+cancelend = false
 
 async function getEndorsements(){
     if(cancelend) return [{name:"Sorry,",lvl:1,positions:[{name:"The endorsements page is currently under maintenance"}]}]
