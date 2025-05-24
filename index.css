@@ -279,6 +279,11 @@ input.b{
     padding:10px;
 }
 
+.breakonmo2{
+    display:flex;
+        flex-flow:row;
+    }
+
 textarea{
     background-color: transparent;
     border:2px white solid;
@@ -292,6 +297,10 @@ textarea{
 
 #homemobbar{
     display:none;
+}
+
+.rsadf{
+    width:350px;
 }
 
 @media (max-width: 1350px){
@@ -321,6 +330,7 @@ textarea{
 
 
 @media (max-width: 900px){
+    
     #endorsementTiles{
         grid-template-columns: 1fr 1fr;
     }
@@ -415,11 +425,19 @@ textarea{
     #homebigbar{
         display:none;
     }
+
+    .breakonmo2{
+        flex-flow:column;
+    }
 }
 
 @media (max-width: 600px){
     #endorsementTiles{
         grid-template-columns: 1fr 1fr;
+    }
+
+    .rsadf{
+        width:100%;
     }
     
     #endorsementTiles >.end{
