@@ -150,6 +150,87 @@
       "grade": "t"
     },
     {
+      "name": "Ateeya Moostofa",
+      "lvl":1,
+      "positions": [
+        {
+          "name":"Gr9 Rep",
+          "time":"2023-2024"
+        },
+        {
+          "name":"Jr. Vice President",
+          "time":"2024-2025"
+        }
+      ],
+      "img":"amoostofa",
+      "grade": "t"
+    },
+    {
+      "name": "Griffin Gibbins",
+      "lvl":3,
+      "positions": [
+        {
+          "name":"Robotics Team Design Lead"
+        }
+      ],
+      "img":"ggibbins",
+      "grade": "t"
+    },
+    {
+      "name": "Isla Mitsumizo",
+      "lvl":3,
+      "positions": [],
+      "img":"imitsumizo",
+      "grade": "t"
+    },
+    {
+      "name": "Julian Brooke",
+      "lvl":3,
+      "positions": [
+        {
+          "name":"DECA Member"
+        },
+        {
+          "name":"Baseball Team"
+        }
+      ],
+      "img":"jbrooke",
+      "grade": "t"
+    },
+    {
+      "name": "Jasper Jordan",
+      "lvl":3,
+      "positions": [
+        {
+          "name":"Swim Team"
+        }
+      ],
+      "img":"ggibbins",
+      "grade": "t"
+    },
+    {
+      "name": "Lachlan Phillips",
+      "lvl":4,
+      "positions": [
+        {
+          "name":"Robotics SHSM Student"
+        }
+      ],
+      "img":"lphillips",
+      "grade": "t"
+    },
+    {
+      "name": "Noah Pearen",
+      "lvl":3,
+      "positions": [
+        {
+          "name":"Horseshoe Newspaper Writer"
+        }
+      ],
+      "img":"npearen",
+      "grade": "t"
+    },
+    {
       "name": "Mr. J Wang",
       "lvl":1,
       "positions": [
