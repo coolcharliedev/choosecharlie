@@ -181,8 +181,8 @@ p{
 
 #endorsementTiles >.end{
     width:100%;
-    height:450px;
-    border:4px white solid;
+    height:calc(100vh/4);
+    /*border:4px white solid;*/
     display:flex;
     flex-flow:column;
     flex:1;
@@ -193,31 +193,44 @@ p{
 
 #endorsementTiles > .end > .endtxb{
     margin:10px;
-    padding:20px;
+    padding:0px;
     border-radius:10px;
-    background-color:white;
+    /*background-color:white;*/
     display:flex;
     flex-flow:column;
-    box-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+    /*box-shadow: 0px 4px 3px rgba(0,0,0,0.4),
              0px 8px 13px rgba(0,0,0,0.3),
-             0px 18px 23px rgba(0,0,0,0.3);
+             0px 18px 23px rgba(0,0,0,0.3);*/
 }
 
 #endorsementTiles > .end > .endtxb > .ename{
-    color:black;
+    color:rgb(255, 255, 255);
     font-family:helveticaneue, Helvetica, sans-serif;
-    font-size:20px;
+    font-size:10px;
+
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.3),
+             0px 18px 23px rgba(0,0,0,0.3);
 }
 #endorsementTiles > .end > .endtxb > .epos{
-    color:rgb(24, 24, 24);
+    color:rgb(255, 255, 255);
     font-family:helveticaneue, Helvetica, sans-serif;
-    font-size:13px;
+    font-size:8px;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.3),
+             0px 18px 23px rgba(0,0,0,0.3);
 }
 
 .navbarelement{
     display:flex;
     flex-flow:row;
     gap:20px;
+}
+
+@media print {
+    * {
+        -webkit-print-color-adjust: exact;
+    }
 }
 
 .navBarOption{
@@ -294,6 +307,7 @@ textarea{
     display:none;
 }
 
+<<<<<<< Updated upstream
 @media (max-width: 1350px){
     #endorsementTiles{
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -436,3 +450,8 @@ textarea{
         font-size:10px;
     }
 }
+=======
+.rsadf{
+    width:350px;
+}
+>>>>>>> Stashed changes

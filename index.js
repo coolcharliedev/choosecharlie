@@ -205,12 +205,14 @@ async function buildEndorsementTiles(buildr){
 
     i = 0
     while(i<buildr.length){
+        if(buildr[i].img){
         if(priorities[buildr[i].lvl]){
             priorities[buildr[i].lvl].push(buildr[i])
         }else{
             priorities[buildr[i].lvl] = []
             priorities[buildr[i].lvl].push(buildr[i])
         }
+    }
         i++
     }
     v=1
